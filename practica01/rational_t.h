@@ -47,11 +47,12 @@ class rational_t
   // PRÁCTICA
   //método que resta 1 unidad al racional. sigue la forma a/b - 1 = (a-b)/b 
   rational_t substractone();
-  
+  // método para escribir en pantalla (write) y leer desde teclado (read);
   void write(ostream& = cout) const;
   void read(istream& = cin);
   
  private:
+  // atributos de la clase (numerador y denominador);
   int num_;
   int den_;
 };
