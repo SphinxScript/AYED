@@ -25,8 +25,6 @@ int rational_t::get_den() const
 {
   return den_;
 }
-
-
 // método setter para cambiar el valor del numerador;
 void rational_t::set_num(const int n)
 {
@@ -44,22 +42,17 @@ double rational_t::value() const
   return double(get_num()) / get_den();
 }
 
-
 // COMPARACIONES
 // metodo para saber si son iguales, mediante un valor referencia de error;
 bool rational_t::is_equal(const rational_t& r, const double precision) const
 {
   return((fabs(value() - r.value()) < precision));
 }
-
-
 // método para saber si el valor primero es mas grande que el valor segundo mediante una precision;
 bool rational_t::is_greater(const rational_t& r, const double precision) const
 {
   return(value() - r.value() > precision);
 }
-
-
 // metodo para saber si el primer numero es menor que el segundo mediante una precision;
 bool rational_t::is_less(const rational_t& r, const double precision) const
 {
@@ -111,4 +104,12 @@ void rational_t::read(istream& is)
   cout << "Denominador? ";
   is >> den_;
   assert(den_ != 0);
+}
+
+// PRÁCTICA, MÉTODO RESTAR 1;
+rational_t rational_t::substractone() {
+  int numerador, denominador;
+  numerador = num_ - den_;
+  denominador = den_;
+  return rational_t(numerador, denominador);
 }
