@@ -28,21 +28,24 @@ class rational_t
   // setters
   void set_num(const int);
   void set_den(const int);
-  // metodo para obtener el valor;
+  // método para obtener el valor aproximado (o exacto) del número racional;
   double value(void) const;
 
   // FASE II
+  // métodos para comprobar y realizar comparaciones;
   bool is_equal(const rational_t&, const double precision = EPSILON) const;
   bool is_greater(const rational_t&, const double precision = EPSILON) const;
   bool is_less(const rational_t&, const double precision = EPSILON) const;
   
   // FASE III
+  // métodos de operaciones aritméticas;
   rational_t add(const rational_t&);
   rational_t substract(const rational_t&);
   rational_t multiply(const rational_t&);
   rational_t divide(const rational_t&);
 
   // PRÁCTICA
+  //método que resta 1 unidad al racional. sigue la forma a/b - 1 = (a-b)/b 
   rational_t substractone();
   
   void write(ostream& = cout) const;
