@@ -26,7 +26,7 @@ int main()
   cout << "b: ";
   b.write();
 
-  //c.read();
+  c.read();
   cout << "c: ";
   c.write();
 
