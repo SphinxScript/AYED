@@ -53,7 +53,7 @@ int main()
   cout << "a / b: ";
   a.divide(b).write();
   // PRACTICA
-  cout << "ingrese un número racional, luego se imprimirá en pantalla el numero - 1" << endl;
+  cout << "ingrese un número racional, luego se imprimirá en pantalla dicho número - 1 (a/b - 1)" << endl;
   rational_t h{0};
   h.read();
   cout << "el número que ingresó - 1 es ";
