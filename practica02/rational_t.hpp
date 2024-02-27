@@ -21,10 +21,10 @@
 
 using namespace std;
 
-class rational_t
-{
+class rational_t {
   // pautas de estilos [44] y [73]: primero "public" y después "private"
 public:
+  // constructor y destructor
   rational_t(const int = 0, const int = 1);
   ~rational_t() {}
   
@@ -51,6 +51,7 @@ public:
   rational_t multiply(const rational_t&) const;
   rational_t divide(const rational_t&) const;
 
+  // metodos de lectura y escritura en pantalla
   void write(ostream& os = cout) const;
   void read(istream& is = cin);
   
@@ -60,11 +61,11 @@ private:
 };
 
 
-// sobrecarga de los operadores de E/S
+// sobrecarga de los operadores de entrada/salida
 ostream& operator<<(ostream& os, const rational_t&);
 istream& operator>>(istream& is, rational_t&);
 
-// FASE I: operadores
+// FASE I: operadores sobrecargados (suma, resta, multiplicación y división)
 rational_t operator+(const rational_t&, const rational_t&);
 rational_t operator-(const rational_t&, const rational_t&);
 rational_t operator*(const rational_t&, const rational_t&);

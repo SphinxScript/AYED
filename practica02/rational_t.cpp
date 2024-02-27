@@ -21,6 +21,7 @@ rational_t::rational_t(const int n, const int d)
 // pauta de estilo [87]: 3 líneas de separación entre métodos
 
 // pauta de estilo [83]: tipo retornado en línea anterior al método
+// getter numerador
 inline
 int
 rational_t::get_num() const
@@ -30,6 +31,7 @@ rational_t::get_num() const
 
 
 
+//getter denominador
 inline
 int
 rational_t::get_den() const
@@ -38,7 +40,8 @@ rational_t::get_den() const
 }
 
 
-  
+
+// setter numerador
 void
 rational_t::set_num(const int n)
 {
@@ -46,7 +49,8 @@ rational_t::set_num(const int n)
 }
 
 
-  
+
+// setter denominador
 void
 rational_t::set_den(const int d)
 {

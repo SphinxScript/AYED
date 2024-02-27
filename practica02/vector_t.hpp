@@ -19,6 +19,7 @@ template<class T>
 class vector_t
 {
 public:
+  // constructor y destructor
   vector_t(const int = 0);
   ~vector_t();
   
@@ -39,6 +40,7 @@ public:
   const T& at(const int) const;
   const T& operator[](const int) const;
 
+  // métodos de escritura y lectura
   void write(ostream& = cout) const;
   void read(istream& = cin);
 
@@ -51,7 +53,7 @@ private:
 };
 
 
-
+// contructor
 template<class T>
 vector_t<T>::vector_t(const int n)
 { sz_ = n;
@@ -59,7 +61,7 @@ vector_t<T>::vector_t(const int n)
 }
 
 
-
+// destructor
 template<class T>
 vector_t<T>::~vector_t()
 {
@@ -104,7 +106,7 @@ vector_t<T>::resize(const int n)
 }
 
 
-
+// getter de valor
 template<class T>
 inline T
 vector_t<T>::get_val(const int i) const
@@ -114,7 +116,7 @@ vector_t<T>::get_val(const int i) const
 }
 
 
-
+// getter de tamaño
 template<class T>
 inline int
 vector_t<T>::get_size() const
@@ -123,7 +125,7 @@ vector_t<T>::get_size() const
 }
 
 
-
+// setter de valor
 template<class T>
 void
 vector_t<T>::set_val(const int i, const T d)
@@ -134,6 +136,7 @@ vector_t<T>::set_val(const int i, const T d)
 
 
 
+// devuelve la posicion
 template<class T>
 T&
 vector_t<T>::at(const int i)
@@ -143,7 +146,7 @@ vector_t<T>::at(const int i)
 }
 
 
-
+//¿?
 template<class T>
 T&
 vector_t<T>::operator[](const int i)
@@ -152,7 +155,7 @@ vector_t<T>::operator[](const int i)
 }
 
 
-
+//¿?
 template<class T>
 const T&
 vector_t<T>::at(const int i) const
@@ -162,7 +165,7 @@ vector_t<T>::at(const int i) const
 }
 
 
-
+//¿?
 template<class T>
 const T&
 vector_t<T>::operator[](const int i) const
@@ -172,6 +175,7 @@ vector_t<T>::operator[](const int i) const
 
 
 
+// metodo de escritura
 template<class T>
 void
 vector_t<T>::write(ostream& os) const
@@ -184,6 +188,7 @@ vector_t<T>::write(ostream& os) const
 
 
 
+// metodo de lectura
 template<class T>
 void
 vector_t<T>::read(istream& is)
