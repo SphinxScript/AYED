@@ -23,7 +23,7 @@ public:
   vector_t(const int = 0);
   ~vector_t();
   
-  void resize(const int);
+  void resize1(const int);
   
   // getters
   T get_val(const int) const;
@@ -98,7 +98,7 @@ vector_t<T>::destroy()
 
 template<class T>
 void
-vector_t<T>::resize(const int n)
+vector_t<T>::resize1(const int n)
 {
   destroy();
   sz_ = n;
@@ -194,7 +194,7 @@ void
 vector_t<T>::read(istream& is)
 {
   is >> sz_;
-  resize(sz_);
+  resize1(sz_);
   for (int i = 0; i < sz_; ++i)
     is >> at(i);
 }

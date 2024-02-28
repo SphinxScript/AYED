@@ -64,6 +64,15 @@ int main()
   C.multiply(A, B);
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();
+
+  // para probar el metodo propio: suma
+
+  matrix_t<double> U,I,M;
+  U.read(), U.write();
+  I.read(), I.write();
+
+  M.suma(U, I);
+  M.write();
   
   return 0;
 }

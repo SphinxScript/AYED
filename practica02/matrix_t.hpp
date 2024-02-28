@@ -40,6 +40,8 @@ public:
   
   // operaciones y operadores
   void multiply(const matrix_t<T>&, const matrix_t<T>&);
+  // implementacion propia:
+  void suma(const matrix_t<T>&, const matrix_t<T>&);
 
   void write(ostream& = cout) const;
   void read(istream& = cin);
@@ -58,7 +60,7 @@ matrix_t<T>::matrix_t(const int m, const int n)
 { 
   m_ = m;
   n_ = n;
-  v_.resize(m_ * n_);
+  v_.resize1(m_ * n_);
 }
 
 
@@ -76,7 +78,7 @@ matrix_t<T>::resize(const int m, const int n)
   assert(m > 0 && n > 0);
   m_ = m;
   n_ = n;
-  v_.resize(m_ * n_);
+  v_.resize1(m_ * n_);
 }
 
 
@@ -177,11 +179,34 @@ matrix_t<T>::pos(const int i, const int j) const
 }
 
 
-
+// m filas
+// n columnas
 // FASE III: producto matricial
 template<class T>
 void
 matrix_t<T>::multiply(const matrix_t<T>& A, const matrix_t<T>& B)
 {
-  // rellenar código
+  assert(A.get_n() == B.get_m());
+  resize(A.get_m(), B.get_n());
+  for (int i{1}; i <= A.get_m(); ++i) {
+    for (int j{1}; j <= B.get_n(); ++j) {
+      at(i,j) = 0;
+      for (int k{1}; k <= B.get_m(); ++k) {
+      at(i,j) = at(i,j) + A(i,k) * B(k,j);
+      }
+    }
+  }
+}
+
+// metodo propio: suma
+
+template<class T>
+void matrix_t<T>::suma(const matrix_t<T>& A, const matrix_t<T>& B) {
+  assert((A.get_m() == B.get_m()) && (A.get_n() == B.get_n()));
+  resize(A.get_m(), B.get_m());
+  for (int i{1}; i <= A.get_m(); ++i) {
+    for (int j{1}; j <= A.get_n(); ++j) {
+      at(i,j) = A(i,j) + B(i,j);
+    }
+  }
 }
