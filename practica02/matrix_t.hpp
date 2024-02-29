@@ -46,6 +46,9 @@ public:
   void write(ostream& = cout) const;
   void read(istream& = cin);
 
+  // metodo serpiente
+  void serpiente(const matrix_t<T>& A);
+
 private:
   int m_, n_; // m_ filas y n_ columnas
   vector_t<T> v_;
@@ -209,4 +212,21 @@ void matrix_t<T>::suma(const matrix_t<T>& A, const matrix_t<T>& B) {
       at(i,j) = A(i,j) + B(i,j);
     }
   }
+}
+
+template<class T>
+void matrix_t<T>::serpiente(const matrix_t<T>& A) {
+  for (int i{1}; i <= A.get_m(); ++i) {
+    if (i % 2 == 0) {
+      for (int j = A.get_n(); j >= 1; --j) {
+        std::cout << at(i,j) << " ";
+      }
+    }
+    else {
+      for (int j{1}; j <= A.get_n(); ++j) {
+        std::cout << at(i,j) << " ";
+      }
+    }
+  }
+  std::cout << std::endl;
 }

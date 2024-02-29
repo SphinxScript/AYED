@@ -65,8 +65,19 @@ int main()
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();
 
+
+
+  // practica clase:
+
+  std::cout << " serpiente: \n";
+  matrix_t<int> O;
+  O.read(), O.write();
+  std::cout << " serpiente: \n";
+  O.serpiente(O);
+
   // para probar el metodo propio: suma
 
+  std::cout << "\n prueba suma \n";
   matrix_t<double> U,I,M;
   U.read(), U.write();
   I.read(), I.write();
