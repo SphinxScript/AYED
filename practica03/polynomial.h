@@ -34,7 +34,7 @@ class Polynomial : public vector_t<double> {
   // operaciones
   double Eval(const double) const;
   bool IsEqual(const Polynomial&, const double = EPS) const;
- };
+};
 
 
 // Clase para polinomios basados en vectores dispersos
@@ -72,6 +72,7 @@ void Polynomial::Write(std::ostream& os, const double eps) const {
   os << " ]" << std::endl;
 }
 
+// metodo escritura
 std::ostream& operator<<(std::ostream& os, const Polynomial& p) {
   p.Write(os);
   return os;
@@ -112,7 +113,7 @@ void SparsePolynomial::Write(std::ostream& os) const {
   }
   os << " ]" << std::endl;
 }
-
+// metodo escritura sobrecargado
 std::ostream& operator<<(std::ostream& os, const SparsePolynomial& p) {
   p.Write(os);
   return os;

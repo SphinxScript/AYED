@@ -50,7 +50,7 @@ class sparse_vector_t {
 
   // E/S
   void write(std::ostream& = std::cout) const;
-
+  // atributos
  private:
   pair_vector_t pv_;  // valores + índices
   int nz_;            // nº de valores distintos de cero = tamaño del vector
@@ -88,6 +88,7 @@ sparse_vector_t& sparse_vector_t::operator=(const sparse_vector_t& w) {
 
 sparse_vector_t::~sparse_vector_t() {}
 
+// metodo getters:
 inline int sparse_vector_t::get_nz() const {
   return nz_;
 }
@@ -114,7 +115,7 @@ const pair_double_t& sparse_vector_t::operator[](const int i) const {
   return at(i);
 }
 
-// E/S
+// E/S sobrecargados
 void sparse_vector_t::write(std::ostream& os) const { 
   os << get_n() << "(" << get_nz() << "): [ ";
   for (int i = 0; i < get_nz(); i++)

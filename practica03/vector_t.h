@@ -47,7 +47,7 @@ template<class T> class vector_t {
   // E/S
   void read(std::istream& = std::cin);
   void write(std::ostream& = std::cout) const;
-
+  // atributos
  private:
   T *v_;
   int sz_;
@@ -101,7 +101,7 @@ template<class T> void vector_t<T>::resize(const int n) {
   sz_ = n;
   build();
 }
-
+// getter
 template<class T> inline T vector_t<T>::get_val(const int i) const {
   assert(i >= 0 && i < get_size());
   return v_[i];
@@ -110,7 +110,7 @@ template<class T> inline T vector_t<T>::get_val(const int i) const {
 template<class T> inline int vector_t<T>::get_size() const {
   return sz_;
 }
-
+// setter
 template<class T> void vector_t<T>::set_val(const int i, const T d) {
   assert(i >= 0 && i < get_size());
   v_[i] = d;
@@ -133,7 +133,7 @@ template<class T> const T& vector_t<T>::at(const int i) const {
 template<class T> const T& vector_t<T>::operator[](const int i) const {
   return at(i);
 }
-
+// metodo lectura sobrecargado
 template<class T> void vector_t<T>::read(std::istream& is) {
   is >> sz_;
   resize(sz_);
@@ -147,7 +147,7 @@ template<class T> void vector_t<T>::write(std::ostream& os) const {
     os << at(i) << (i != get_size() - 1 ? "\t" : "");
   os << " ]" << std::endl;
 }
-
+// metodos de salida sobrecargados
 template<class T> std::istream& operator>>(std::istream& is, vector_t<T>& v) {
   v.read(is);
   return is;

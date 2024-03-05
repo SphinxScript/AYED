@@ -31,7 +31,7 @@ template<class T> class pair_t {
   // E/S
   std::istream& read(std::istream& is = std::cin);
   std::ostream& write(std::ostream& os = std::cout) const;
-
+  // atributos
  private:
   T val_;
   int inx_;
@@ -43,12 +43,12 @@ template<class T> pair_t<T>::pair_t() : val_(), inx_(-1) {}
 template<class T> pair_t<T>::pair_t(T val, int inx) : val_(val), inx_(inx) {}
 
 template<class T> pair_t<T>::~pair_t() {}
-
+// setter
 template<class T> void pair_t<T>::set(T val, int inx) {
   val_ = val;
   inx_ = inx;
 }
-
+// getters
 template<class T> int pair_t<T>::get_inx() const {
   return inx_;
 }
@@ -56,17 +56,16 @@ template<class T> int pair_t<T>::get_inx() const {
 template<class T> T pair_t<T>::get_val() const {
   return val_;
 }
-
+// metodo lectura sobrecargado
 template<class T> std::istream& pair_t<T>::read(std::istream& is) {
   return is >> inx_ >> val_;
 }
-
+// metodo escritura sobrecargado
 template<class T> std::ostream& pair_t<T>::write(std::ostream& os) const {
   return os << "(" << inx_ << ":" << val_ << ")";
 }
-
-template<class T> std::ostream& operator<<(std::ostream& os,
-					   const pair_t<T>& p) {
+// metodo escritura 2 sobrecargado
+template<class T> std::ostream& operator<<(std::ostream& os, const pair_t<T>& p) {
   p.write(os);
   return os;
 }
