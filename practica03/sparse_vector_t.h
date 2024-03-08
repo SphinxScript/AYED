@@ -67,9 +67,9 @@ bool IsNotZero(const double val, const double eps = EPS) {
 sparse_vector_t::sparse_vector_t(const int n) : pv_(n), nz_(0), n_(n) {}
 
 // FASE II
-sparse_vector_t::sparse_vector_t(const vector_t<double>& v, const double eps)
-    : pv_(), nz_(0), n_(0) {
-  // poner el código aquí
+sparse_vector_t::sparse_vector_t(const vector_t<double>& v, const double eps) : pv_(), nz_(0), n_(0) {
+  // poner el codigo aqui
+  
 }
 
 // constructor de copia

@@ -22,8 +22,7 @@ class Polynomial : public vector_t<double> {
  public:
   // constructores
   Polynomial(const int n = 0) : vector_t<double>(n) {};
-  Polynomial(const Polynomial& pol)
-      : vector_t<double>(pol) {}; // constructor de copia
+  Polynomial(const Polynomial& pol) : vector_t<double>(pol) {}; // constructor de copia
 
   // destructor
   ~Polynomial() {};
