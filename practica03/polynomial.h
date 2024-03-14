@@ -54,6 +54,8 @@ class SparsePolynomial : public sparse_vector_t {
   double Eval(const double) const;
   bool IsEqual(const SparsePolynomial&, const double = EPS) const;
   bool IsEqual(const Polynomial&, const double = EPS) const;
+
+  void Show(void) const;
 };
 
 // E/S
@@ -166,6 +168,17 @@ bool SparsePolynomial::IsEqual(const SparsePolynomial& spol, const double eps) c
 // vector disperso y vector denso
 bool SparsePolynomial::IsEqual(const Polynomial& pol, const double eps) const {
   return IsEqual(SparsePolynomial(pol));
+}
+
+// modificacion:
+
+void SparsePolynomial::Show(void) const {
+  for (int i = 0; i < get_nz() - 1; ++i) {
+    if (at(i).get_inx() + 1 == at(i + 1).get_inx()) {
+      std::cout << at(i).get_val() << ", " << at(i + 1).get_val() << ", ";
+    }
+  }
+  std::cout << std::endl;
 }
 
 

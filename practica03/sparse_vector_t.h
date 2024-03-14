@@ -144,3 +144,4 @@ std::ostream& operator<<(std::ostream& os, const sparse_vector_t& sv) {
 }
 
 #endif  // SPARSE_VECTORT_H_
+

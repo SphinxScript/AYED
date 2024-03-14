@@ -91,5 +91,19 @@ int main()
   cout << "sp3 == p2? " << (sp3.IsEqual(p2) ? "true" : "false") << endl;
   cout << endl;
 
+  // modificacion: 
+  cout << "metodo para sp1: " << sp1 << endl;
+  sp1.Show();
+  cout << endl;
+
+  cout << "metodo para sp2: " << sp2 << endl;
+  sp2.Show();
+  cout << endl;
+
+  cout << "metodo para sp3: " << sp3 << endl;
+  sp3.Show();
+  cout << endl;
+
+
   return 0;
 }
