@@ -91,9 +91,26 @@ double Polynomial::Eval(const double x) const {
 
 // Comparación si son iguales dos polinomios representados por vectores densos
 bool Polynomial::IsEqual(const Polynomial& pol, const double eps) const {
-  bool differents = false;
-  // poner el código aquí
-  return !differents;
+  int no_cero1{0}, no_cero2{0};
+  for (int i = get_size() - 1; i >= 0; --i) {
+    if (fabs(at(i)) > eps) {
+      no_cero1 = i;
+      break;
+    }
+  }
+  for (int i = pol.get_size() - 1; i >= 0; --i) {
+    if (fabs(pol.at(i)) > eps) {
+      no_cero2 = i;
+      break;
+    }
+  }
+  if (no_cero1 != no_cero2) return false;
+  for (int i{0}; i <= no_cero1; ++i) {
+    if (fabs(at(i) - pol.at(i)) > eps) {
+      return false;
+    }
+  }
+  return true;
 }
 
 // constructor de copia
@@ -135,19 +152,20 @@ double SparsePolynomial::Eval(const double x) const {
 }
 
 // Comparación si son iguales dos polinomios representados por vectores dispersos
-bool SparsePolynomial::IsEqual(const SparsePolynomial& spol
-			       , const double eps) const {
-  bool differents = false;
-  // poner el código aquí
-  return !differents;
+bool SparsePolynomial::IsEqual(const SparsePolynomial& spol, const double eps) const {
+  if ((spol.get_nz())!=(get_nz())) return false;
+  for (int i{0}; i < get_nz(); ++i) {
+    if (fabs((at(i).get_val()) - (spol.at(i).get_val())) > EPS) {
+      return false;
+    }
+  }
+  return true;
 }
 
 // Comparación si son iguales dos polinomios representados por
 // vector disperso y vector denso
 bool SparsePolynomial::IsEqual(const Polynomial& pol, const double eps) const {
-  bool differents = false;
-  // poner el código aquí
-  return !differents;
+  return IsEqual(SparsePolynomial(pol));
 }
 
 
