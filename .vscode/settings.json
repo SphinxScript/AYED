@@ -4,5 +4,6 @@
     "array": "cpp",
     "string_view": "cpp"
   },
-  "inlineChat.accessibleDiffView": "auto"
+  "inlineChat.accessibleDiffView": "auto",
+  "github.copilot.editor.enableAutoCompletions": false
 }
